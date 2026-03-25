@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio — Full Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+      body { background: #020408; overflow-x: hidden; cursor: none; }
+      ::-webkit-scrollbar { width: 4px; }
+      ::-webkit-scrollbar-track { background: #020408; }
+      ::-webkit-scrollbar-thumb { background: #00c8ff; box-shadow: 0 0 8px rgba(0,200,255,0.5); }
+      /* Grid bg */
+      body::before {
+        content: '';
+        position: fixed; inset: 0;
+        background-image:
+          linear-gradient(rgba(0,200,255,0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0,200,255,0.025) 1px, transparent 1px);
+        background-size: 60px 60px;
+        z-index: 0; pointer-events: none;
+      }
+      /* Scanlines */
+      body::after {
+        content: '';
+        position: fixed; inset: 0;
+        background: repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.07) 2px,rgba(0,0,0,0.07) 4px);
+        pointer-events: none; z-index: 0;
+      }
+      /* Orb float keyframes */
+      @keyframes orbFloat {
+        0%, 100% { transform: translateY(0) scale(1); }
+        50% { transform: translateY(-40px) scale(1.05); }
+      }
+      @keyframes glowPulse {
+        0%, 100% { opacity: 1; } 50% { opacity: 0.4; }
+      }
+      @keyframes scanMove {
+        from { background-position: 0 0; } to { background-position: 0 100px; }
+      }
+      #root { position: relative; z-index: 1; }
+      input, textarea, button { cursor: none !important; }
+      a { cursor: none !important; }
+      @media (max-width: 900px) {
+        body { cursor: auto !important; }
+        input, textarea, button, a { cursor: auto !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
