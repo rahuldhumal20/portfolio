@@ -37,7 +37,7 @@ const SKILLS = [
 const EXPERIENCE = [
   {
     id: 1, role: "Agentic AI Intern", company: "Innomatics Research Labs",
-    period: "Feb 2026 – Present", type: "Remote",
+    period: "July 2026 – Sep 2026", type: "Remote",
     points: [
       "Developing backend systems using FastAPI and Python, implementing RESTful APIs and routing.",
       "Built 2+ backend applications including Cart System API and Grocery Delivery Backend using CRUD operations.",
@@ -52,20 +52,55 @@ const PROJECTS = [
     sub: "Ticket Booking Platform", period: "Dec 2025 – Mar 2026",
     desc: "Full-stack MERN ticket booking platform with JWT authentication and RBAC. Features an admin panel managing 10+ events, online & offline ticket bookings, and QR-based ticket verification tested across 100+ cases.",
     stack: ["React.js","Node.js","Express.js","MongoDB Atlas","JWT","Netlify","Render"],
-    github: "https://github.com/rahuldhumal20", demo: "",
+    github: "https://github.com/rahuldhumal20",
+    demo: "https://eventsbuzz.netlify.app/",
   },
   {
-    id: 2, type: "Full Stack", title: "Vehica",
+    id: 2,
+    type: "AI / Full Stack",
+    title: "RAG Customer Support Assistant",
+    sub: "AI-Powered Customer Support System",
+    period: "Jul 2026 – Sep 2026",
+    desc: "Developed an AI-powered customer support assistant using Retrieval-Augmented Generation (RAG) to provide context-aware responses from uploaded PDF documents. Implemented document ingestion, text chunking, vector embeddings, and semantic search using ChromaDB. Integrated LangChain, LangGraph, and Groq LLM for intelligent query processing and response generation.",
+    stack: ["Python", "FastAPI", "LangChain", "LangGraph", "ChromaDB", "Groq API", "React.js"],
+    github: "https://github.com/rahuldhumal20/Customer-Suppport-Assistant",
+    demo: "",
+  },
+  {
+    id: 3,
+    type: "AI / Multi-Agent System",
+    title: "BizPilot",
+    sub: "AI-Powered Multi-Agent Business Analysis Platform",
+    period: "Nov 2026 – Present",
+    desc: "Developing an intelligent multi-agent AI platform that transforms business problems into actionable software solutions. Implemented specialized AI agents for business analysis, solution architecture, cost estimation, financial validation, and project planning. Integrated agent collaboration and workflow orchestration to generate structured business insights, technical recommendations, and implementation plans.",
+    stack: ["Python", "FastAPI", "LangGraph", "LLMs", "Multi-Agent AI", "React.js"],
+    github: "https://github.com/rahuldhumal20/bizpilot",
+    demo: "https://bizpilotn.netlify.app/",
+  },
+  {
+    id: 4,
+    type: "AI / Full Stack",
+    title: "GenAI Resume Analyzer",
+    sub: "LLM-Powered ATS Resume Screening System",
+    period: "Mar 2026 – Apr 2026",
+    desc: "Developed an AI-powered ATS-style resume screening platform that evaluates candidate resumes against job descriptions using LLMs. Implemented PDF resume parsing, automated skill extraction, job matching, and hybrid candidate scoring (0–100). Integrated explainable AI recommendations, matched and missing skill detection, candidate classification, and batch resume processing through CLI.",
+    stack: ["Python", "FastAPI", "React.js", "LangChain", "Groq (LLaMA 3.3)", "PyPDF", "Axios", "LangSmith"],
+    github: "https://github.com/rahuldhumal20/GenAI-Resume-Analyzer",
+    demo: "https://genai-resume-analyzer.netlify.app",
+  },
+  {
+    id: 5, type: "Full Stack", title: "Vehica",
     sub: "Smart Vehicle Recommendation System", period: "Feb 2025 – Mar 2025",
     desc: "Scalable MERN vehicle recommendation platform managing 100+ records. Implemented category navigation, full-text search, and price filtering improving search accuracy by ~40%. 15+ RESTful APIs with secure admin dashboard.",
     stack: ["React.js","Node.js","Express.js","MongoDB","JavaScript"],
-    github: "https://github.com/rahuldhumal20", demo: "",
+    github: "https://github.com/rahuldhumal20",
+    demo: "https://vehica-recommendation.netlify.app/",
   },
 ];
 
 const EDUCATION = [
-  { id: 1, degree: "M.Sc. Computer Application", school: "MES Abasaheb Garware College (Autonomous)", period: "2024 – 2026 (Expected)", detail: "Pune, India" },
-  { id: 2, degree: "B.Sc. Statistics",            school: "MES Abasaheb Garware College (Autonomous)", period: "2021 – 2024",            detail: "First Class with Distinction · 8.08 CGPA" },
+  { id: 1, degree: "M.Sc. Computer Application", school: "MES Abasaheb Garware College (Autonomous)", period: "2024 – 2026 ", detail: "First Class with Distinction · 8.35 CGPA" ,location:"Pune,India"},
+  { id: 2, degree: "B.Sc. Statistics",            school: "MES Abasaheb Garware College (Autonomous)", period: "2021 – 2024", detail: "First Class with Distinction · 8.08 CGPA" , location:"Pune,India" },
 ];
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -467,7 +502,9 @@ export default function App() {
               <div style={ST.eduPeriod}>{ed.period}</div>
               <div style={ST.eduDegree}>{ed.degree}</div>
               <div style={ST.eduSchool}>{ed.school}</div>
+              <div style={ST.edulocation}>{ed.location}</div>
               <div style={ST.eduDetail}>{ed.detail}</div>
+              
             </div>
           ))}
         </div>
@@ -646,6 +683,7 @@ const ST = {
   eduDegree:    { fontFamily:ORBIT, fontSize:"1rem", fontWeight:700, color:"#e0f4ff", marginBottom:"0.35rem" },
   eduSchool:    { fontSize:"0.86rem", color:"rgba(224,244,255,0.65)", marginBottom:"0.4rem", lineHeight:1.5 },
   eduDetail:    { fontFamily:MONO, fontSize:"0.7rem", color:"#00c8ff", letterSpacing:"0.06em" },
+  edulocation:  { fontFamily:ORBIT, fontSize:"0.7rem", fontWeight:700, color:"#e0f4ff", marginBottom:"0.35rem" },
   aboutGrid:    { position:"relative", zIndex:1, display:"grid", alignItems:"center" },
   aboutVisual:  { display:"flex", justifyContent:"center" },
   frame:        { width:280, height:340, border:"1px solid rgba(0,200,255,0.15)", position:"relative", overflow:"hidden", clipPath:"polygon(0 0,calc(100% - 28px) 0,100% 28px,100% 100%,28px 100%,0 calc(100% - 28px))", background:"#061220", display:"flex", alignItems:"center", justifyContent:"center" },
